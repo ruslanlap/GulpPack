@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  @@include("partOfHtml/header.html")
+  <h1>main page</h1>
+  @@loop("./partOfHtml/news-item.html", "../../data/news.json")
+  @@include("partOfHtml/footer.html")
+</body>
+</html>

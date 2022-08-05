@@ -2,9 +2,9 @@ extends layout/app
 
 block page
   include chunk/header
-  h1 Main Page
+  h1.title Main Page
 
-  ul
+  ul.news
     each item in news
       li= item.name
 

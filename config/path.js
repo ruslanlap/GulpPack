@@ -15,4 +15,9 @@ module.exports = {
 		watcher: pathSrc + "/pug/**/*.pug",
 		dest: pathDest,
 	},
+	css: {
+		src: pathSrc + "/css/*.css",
+		watcher: pathSrc + "/css/**/*.css",
+		dest: pathDest + "/css",
+	},
 };

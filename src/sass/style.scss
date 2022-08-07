@@ -1,0 +1,26 @@
+$base-font-size: 42px;
+
+@mixin phone-only {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: $base-font-size;
+	background-color: rgb(0, 255, 179);
+	font-family: "Roboto", sans-serif;
+	line-height: 1.5;
+
+	@include phone-only {
+		color: aliceblue;
+		background-color: black;
+	}
+}
+
+@import "block/title.scss";
+@import "block/news.scss";

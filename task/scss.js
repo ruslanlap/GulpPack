@@ -15,11 +15,13 @@ const size = require("gulp-size"); // для  того щоб було 2 різ�
 const shorthand = require("gulp-shorthand"); // плагін для скорочення записів в CSS
 const groupСssMediaQueries = require("gulp-group-css-media-queries"); // плагін для скорочення записів в CSS
 const sass = require("gulp-sass")(require("sass"));
+const sassGlob = require("gulp-sass-glob");
 
 // робота з CSS
 const scss = () => {
 	return src(path.scss.src, { sourcemaps: true }) // маски шляхів
 		.pipe(plumber({ errorHandler: notify.onError() })) // вивести помилку
+		.pipe(sassGlob()) // для пошуку глобальних файлів
 		.pipe(sass()) // компіляція sass
 		.pipe(autoprefixer()) //для  роботи в різних браузерах і старих версіях
 		.pipe(shorthand()) //для  роботи в різних браузерах і старих версіях
@@ -41,3 +43,5 @@ const scss = () => {
 };
 
 module.exports = scss;
+
+

@@ -39,3 +39,5 @@ exports.clears = clears;
 
 // серія
 exports.dev = series(clears, parallel(pug, scss, js, img), parallel(watcher, server));
+
+

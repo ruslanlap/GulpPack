@@ -12,9 +12,13 @@ $base-font-size: 24px;
 
 body {
 	font-size: $base-font-size;
-	background-color: rgb(0, 255, 179);
 	font-family: "Roboto", sans-serif;
 	line-height: 1.5;
+background: url(../img/photo_2021-05-31_12-03-46.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
 	@include phone-only {
 		color: aliceblue;

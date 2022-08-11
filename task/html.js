@@ -15,6 +15,7 @@ const htmlmin = require("gulp-htmlmin"); // зжати  html
 const size = require("gulp-size"); // визначення ваги файлів після стиснення
 const plumber = require("gulp-plumber"); // перевіряти помилки
 const notify = require("gulp-notify"); // вивести помилку
+const webpHtml = require("gulp-webp-html"); // для  роботи фото в різних браузерах
 
 // робота з HTML
 const html = () => {
@@ -23,6 +24,7 @@ const html = () => {
 			errorHandler: notify.onError()
 		})) // вивести помилку
 		.pipe(gulpFileInclude()) //виконати включення частин файлів в основний файл
+		.pipe(webpHtml())
 		.pipe(
 			size({
 				title: "до зжимання",

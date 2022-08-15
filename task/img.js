@@ -11,7 +11,7 @@ const notify = require("gulp-notify"); // вивести помилку
 const imagemin = require("gulp-imagemin"); // оптимізація зображень
 const newer = require("gulp-newer"); // оптимізація зображень
 const webp = require("gulp-webp"); // оптимізація зображень
-
+// const gulpIf = require("gulp-if"); // оптимізація зображень
 
 // робота з image
 const img = () => {
@@ -22,8 +22,8 @@ const img = () => {
 		.pipe(dest(path.img.dest)) // public де збереження зображення
 		.pipe(src(path.img.src)) //
 		.pipe(newer(path.img.dest)) // фільтрувати по даті міняння
-		.pipe(imagemin(app.imagemin)) //
+		.pipe(imagemin()) //
 		.pipe(dest(path.img.dest)); // public де збереження зображення
-}
+};
 
 module.exports = img;

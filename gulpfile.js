@@ -4,6 +4,7 @@ const browsersync = require("browser-sync").create(); //запустити се�
 
 //configs
 const path = require("./config/path.js"); // підключення шляхів
+const app = require("./config/app.js"); // підключення шляхів
 
 // задачі паку
 const clears = require("./task/clears.js");
@@ -11,6 +12,7 @@ const pug = require("./task/pug.js");
 const scss = require("./task/scss.js");
 const js = require("./task/js.js");
 const img = require("./task/img.js");
+const font = require("./task/font.js");
 
 //спостерігач
 const watcher = () => {
@@ -18,6 +20,7 @@ const watcher = () => {
 	watch(path.scss.watcher, scss).on("all", browsersync.reload);
 	watch(path.js.watcher, js).on("all", browsersync.reload);
 	watch(path.img.watcher, img).on("all", browsersync.reload);
+	watch(path.font.watcher, font).on("all", browsersync.reload);
 };
 
 // server
@@ -36,8 +39,7 @@ exports.js = js;
 exports.img = img;
 exports.watch = watcher;
 exports.clears = clears;
+exports.font = font;
 
-// серія
-exports.dev = series(clears, parallel(pug, scss, js, img), parallel(watcher, server));
-
-
+// package task
+exports.dev = series(clears, parallel(pug, scss, js, img, font), parallel(watcher, server));

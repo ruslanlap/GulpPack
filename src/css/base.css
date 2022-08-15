@@ -6,6 +6,7 @@ body {
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
 	line-height: 1.5;
+	color: #333;
 }
 
 @media screen and (max-width: 768px) {
